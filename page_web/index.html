@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Image Captioning - M2 VMI</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top">Génération de légende à partir d'image</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">Présentation du sujet</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Méthode</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resultat">Résultats et evaluation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#perspective">Perspectives</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-primary bg-gradient text-white ">
+            <div class="container px-4 text-left image-txt-container">
+                
+                <h1 class="fw-bolder">Projet  Vision et Modélisation : Construction de la légende d'une image </h1>
+                <img src="images\UniversiteParisCite_blanc.png" width="300" height="auto" />
+              
+                
+            </div>
+        </header>
+        <!-- About section-->
+        <section id="about">
+            <div class="container px-4" >
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8 " >
+                        <h1>1. Présentation du sujet</h1>
+                        <p style="text-align: justify" class="lead" >L’un des premiers but de l’intelligence artificielle est d’imiter l’intelligence de l’homme, 
+                            et ce par le biais d’algorithmes exécutés dans un environnement informatique. Une des approches dans ce domaine est de s’inspirer 
+                            du fonctionnement du cerveau humain, plus particulièrement du neurone qui constitue l'unité fonctionnelle de la base du système nerveux., c’est le biomimétisme.</p>
+
+                        <p style="text-align: justify" class="lead" >    Avec l’essor de l’apprentissage profond, depuis le début des années 2010, l’IA s’oriente vers la conception de réseaux de neurones afin d’atteindre cet objectif. 
+                            Initialement élaborés avec un unique type source de données (texte, image, voix), des données unimodales, 
+                            ces algorithmes arrivaient à résoudre des problèmes complexes et obtenir de résultats satisfaisant : reconnaissance d’images, reconnaissance vocales e.g. 
+                            Toutefois, nos expériences en tant qu’être humain sont multimodales, les données que nous recevons sont issues des sources multiples. 
+                            Nous obtenons ces données, les combinons et y procédons afin d’en retirer une information et une représentation : nous apprenons du monde réel.</p>
+
+                        <p style="text-align: justify" class="lead" >   Malgré les progrès considérables réalisés avec les modèles unimodaux, ils ne sont pas suffisants pour 
+                            couvrir l’ensemble des aspects de l’apprentissage humain. Très vite , nous apercevons la nécessité d’aborder un nouveau paradigme dans l’IA : 
+                            passer d’une approche unimodale à une approche multimodale. De ce fait , élaborer des modèles d’apprentissage profond à partir de données multimodales nous 
+                            permet de réaliser davantage de tâches. A titre d’exemple, générer une image à partir d’un texte grâce à un réseau de neurones , celui-ci apprend un concept à partir de plusieurs types de données.</p>
+                        <p  style="text-align: justify" class="lead" >Dans le cadre de notre derniere année d'étude de master, un projet d'implémentation portant sur une tache de computer 
+                            vision nous a été confié, à savoir la génération de la légende d'une image. </p>
+                        <p style="text-align: justify" class="lead" > En effet, cette tâche prend en considération des données multimodales : du texte et une image à la fois.
+                        </p>
+                        <center><img src = "images\image_capt.png" width="700" height ='auto' class="center"></center>
+                        <center><p style="text-align: center"> Figure 1 : Exemple d'images avec leurs légendes</p></center>
+                        <p>                                                                          <br>
+                        </p>
+
+                        <p style="text-align: justify" class="lead" > Afin de réaliser cette tâche, nous allons 
+                            utiliser le dataset Flickr8K, une base de données composée de 8000 images et 40 000 descriptions (5 descriptions 
+                            par image : vérité terrain).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services section-->
+        <section class="bg-light" id="services">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h1>2. Méthode</h1>
+                        <p style="text-align: justify" class="lead">
+                            La génération de légende , Image captioning est une tâche générative. Dans notre cas , nous procédons à aucune classification. <br>
+                            Avant d'assembler ces deux éléments, texte image, il faut procéder à une étape de double encodage. 
+                        </p>
+
+                        <h3>2.1 Encodage des images</h3>
+                        <p class = "lead" style="text-align: justify" > Afin d'encoder nos images, nous avons utilisé le modèle Inception V3. <br>
+                            Inception v3 est un modèle de reconnaissance d'image qui a atteint une précision supérieure à 78,1% sur l'ensemble de données ImageNet.
+                             Ce modèle est l'aboutissement de nombreuses idées développées par plusieurs chercheurs au fil des ans. Il est basé sur l'article originel 
+                             Rethinking the Inception Architecture for Computer Vision de Szegedy, et. al.<br>
+
+                            Le modèle lui-même est composé de composants symétriques et asymétriques, dont les convolutions, 
+                            le average pooling , le max pooling, les concaténations, les abandons et les couches entièrement connectées. 
+                            La normalisation des lots est utilisée de manière approfondie dans le modèle et appliquée aux entrées d'activation.
+                            La perte est calculée à l'aide de Softmax.<br>
+                        </p>
+                        <img src = " images\inceptionv3.png" width="725" height="auto" class="center">
+                        <p style = "text-align: center">Figure 2 : Framework d'Inception V3</p>
+                        <p class = "lead" style="text-align: justify">Nous avons utilisé ce modèle car il présente un nombre de paramètres
+                             moins important que les autres modèles pré-entrainé (25 millions pour Inception , 
+                             tandis qu'AlexNet en présente 60 millions). <br>
+                            Ce modèle a été pré-entrainé sur ImageNet , nous avons fait du fine tuning afin de l'adapter à notre tâche. 
+                             <br>
+                            La totalité des images ont été encodée : nous avons extrait un vecteur de taille (2048,1). 
+                            Puisque nous ne réalisons pas de tâche de classification, la couche de softmax est retirée du modèle.
+                            </p>
+
+                        <h3>2.2 Encodage des légendes</h3>
+                        <p class = "lead" style="text-align: justify">Dans le dataset Flickr8K, chaque image présente 5 légendes, qui constituent la vérité terrain, comme nous pouvons le 
+                        voir sur la figure : </p> 
+                            
+                            <center><img src="images\ex1.jpg" ></center>
+                          
+                         
+                            <center><img src="images\ex1 caption.jpg"  width="500" height="auto" ></center>
+                            <p style="text-align : center"> Figure 3 : Image issue de Flickr8K avec ces descriptions qui constituent la vérité terrain</p>
+                        <p>                                                                                
+                                                                                                         
+                                                                                      
+                        </p>
+                        <p class = "lead" style="text-align: justify"> Nous avons également encodé les captions. Nous avons
+                        utilisé GloVe, Gloval Vectors for Word Reprentation. Il fut initialement présenté en 2015, dans l'article originel "GloVe: Global Vectors for Word Representation"
+                    de Jeffrey Pennington, R. Socher et  Christopher D. Manning, chercheurs à l'Université de Stanford à cette époque. <br>
+                    <br>Les vecteurs de mots correspondent aux mots dans un espace vectoriel, où
+                     les mots similaires sont regroupés et les mots différents sont séparés.
+                     L'avantage d'utiliser Glove par rapport à Word2Vec est que GloVe ne se contente
+                      pas de s'appuyer sur le contexte local des mots, mais intègre la cooccurrence 
+                      globale des mots pour obtenir des vecteurs de mots. En effet les informations de co-occurrence 
+                      peuvent fournir des informations supplémentaires sur les relations sémantiques et
+                       syntaxiques entre les mots,ce qui peut améliorer les performances des modèles qui 
+                       utilisent ces vecteurs. </p>
+                    
+                       <center><img src = "images\glove_ex.jpg"></center>
+                    <p style="text-align: center"> Figure 4 : Le concept sous-jacent qui distingue l'homme de la femme, c'est-à-dire le genre, peut être spécifié de manière équivalente par diverses autres paires 
+                        de mots, comme roi et reine ou frère et sœur.</p>
+
+                    <p class = "lead" style="text-align: justify">
+                    <br>Nous allons pouvoir dériver  des relations sémantiques entre les mots à partir de la matrice de cooccurrence.
+                     Dans notre cas, nous allons faire correspondre la totalité
+                      des mots présents dans chaque légende avec des vecteurs de 200 dimensions
+                    
+                    </p>
+                    <h3>2.3 Entrainement</h3>
+                    <p class = "lead" style="text-align: justify">
+                    Pour rappel notre jeu de données est divisé en trois parties :</p>
+                    <ul class = "lead" style="text-align: justify">
+                        <li>Entrainement : 6000 images </li>
+                        <li>Validation : 1000 images</li>
+                        <li>Test : 1000 images</li>
+                    </ul>
+                    <p class = "lead" style="text-align: justify" >Nous avons réalisé une série d'entrainement, tout en comparant les valeurs de perte des données d'entrainement et de 
+                    validation, nous avons établis un modèle avec les hyperparamètres suivants: </p>
+                    <center>
+                    <table>
+                        <tr>
+                            <td colspan="2">Hyperparamètres</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Optimizer </td>
+                            <td>Adam</td>
+                        </tr>
+                        <tr>
+                            <td>Taille du batch</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Dropout</td>
+                            <td>0.5</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre d'epoch</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>Learning rate</td>
+                            <td>0.001</td>
+                        </tr>
+                        <tr>
+                            <td>Momentum </td>
+                            <td>0.99</td>
+                        </tr>
+                        
+              
+                       
+                    </table>
+                    <p style="text-align: center" > Table 1 : Hyperparamètres </p>
+                    </center>
+                <img src = "images\model_graph.jpeg" width="750" height="auto"> 
+                <center><p class = "lead" style="text-align: center "> Figure 5 : Accuracy à gauche et  fonction de perte à droite  </p></center>
+                <p class = "lead" style="text-align: justify" >Le temps d'entrainement pour ce modèle fut de 25 mn, en utilisant un GPU Nvidia V100 ou A100 (colab).  </p>
+                
+
+                </div>
+                </div>
+            </div>
+        </section>
+
+          <!-- result section-->
+          <section id="resultats">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>3. Résultats et évaluations</h2>
+                        <p class = "lead" style="text-align: justify" >
+                        Notre tache consiste à générer des données, donc les métriques classiques telles que la précision ou le rappel ne seront 
+                        pas d'une grande utilité. Nous allons utiliser la métrique BLEU Score (bilingual evaluation understudy).
+                        <br>Le BLEU score (ou coefficient de BLEU) est un indicateur de performance couramment utilisé pour évaluer la qualité 
+                        des modèles de génération de langage, ceci est cas dans notre projet. Le score BLEU mesure la similitude entre 
+                        une phrase générée par le modèle et une phrase de référence (généralement appelée "phrase cible").
+
+                        <br>Le  BLEU score calcule la proportion de n-grammes (séquences de mots de longueur n) 
+                        qui apparaissent dans la phrase générée et dans la phrase de référence. Plus cette proportion est élevée,
+                        plus la phrase générée est similaire à la phrase de référence, et plus le BLEU score est élevé. 
+                    </p>
+                    <h3>3.1 Evaluation quantitative</h3>
+                        <p class = "lead" style="text-align: justify"> Pour générer nos captions nous avons utilisé deux 
+                        approches différentes : Greedy Search (recherche gloutonne en français) 
+                        et Beam Search (recherche par balayage) </p>
+                        <ul class = "lead" style="text-align: justify">
+                            <li>Greedy Search : méthode qui consiste à choisir à chaque étape la meilleure option disponible, 
+                                en se basant sur la probabilité de chaque mot généré par le modèle </li>
+                            <li>Beam Search : méthode plus avancée qui consiste à conserver un certain 
+                                nombre de meilleures options (appelées "faisceaux")
+                                 à chaque étape, plutôt qu'une seule. A chaque étape, le modèle calcule
+                                  la probabilité de chaque mot pour chaque faisceau, 
+                                  puis en conserve un certain nombre pour la prochaine étape. 
+                            </li>
+                            
+                        </ul>
+                        <p p class = "lead" style="text-align: justify"> Nous avons calculé la moyenne bleu score pour les deux approches :</p>
+                        <center>
+                            <table>
+                               
+                                <tr>
+                                    <td class="lead fw-bolder">Beam Search (k =3) </td>
+                                    <td>52.13%</td>
+                                </tr>
+                                <tr>
+                                    <td class="lead fw-bolder">Greedy Search</td>
+                                    <td>48.41%</td>
+                               
+                                
+                      
+                               
+                            </table>
+                            <p style="text-align: center" > Table 2 : Moyenne du Bleu Score pour chaque méthode</p>
+                            </center>
+                        <p class = "lead" style="text-align: justify">Dans la recherche par balayage (beam search), le paramètre "k" 
+                            désigne le nombre de faisceaux (ou "options") qui sont conservés à chaque étape du processus de génération.
+                             Plus précisément, lorsque le modèle génère une phrase, 
+                             il calcule la probabilité de chaque mot qui pourrait être utilisé 
+                             pour continuer la phrase. Il conserve alors les k options (mots) les plus probables, et utilise ces options pour continuer la génération de la phrase lors de la prochaine étape.
+
+                            <br> Plus la valeur de k est élevée, plus le modèle conserve d'options à chaque étape,
+                            ce qui augmente les chances de générer une phrase de meilleure qualité. 
+                            Cependant, il faut noter que cela augmente également le temps de calcul 
+                            requis pour générer la phrase. Nous avons donc conservé k=3 pour le 
+                        calcul de la moyenne.  </p>
+                        
+                        
+                        
+                        <h3>3.2 Evaluation qualitative</h3>
+                        <p p class = "lead" style="text-align: justify">L'évaluation qualitative  objective de cette tâche est difficile , et ce pour plusieurs raisons . En effet 
+                        il y a une forte subjectivité car les descriptions peuvent être interprétées de différentes manières. 
+                        Toutefois, nous pouvons tout de même afficher certaines images et demander à une personne de l'interpréter : 
+                       ceci est l'évaluation humaine.
+                        Prenons le cas de cette image, qui nous montre les prédictions du modèles avec les deux approches que 
+                        avons étudié: 
+                        </p>
+                        <center><img src ="images\predic_img.jpg"  width="400" height="auto" ></center>
+                        <center><p style="text-align: center" > Figure 6 : Image issue du jeu de données test</p>
+                        </center>
+                        
+                        <p p class = "lead" style="text-align: justify">Concernant cette image, si une personne devait la décrire en une phrase courte, 
+                        elle peut la décrire de la façon suivante "Un chien noir mord la patte d'un autre chien", ou une autre personne peut dire 
+                        "Deux chiens jouent ensemble, l'un mord la patte de l'autre". Les deux descriptions sont pertinentes. Nous pouvons toujours nous intéresser sur ce 
+                        que le modèle a pu prédire.</p>    
+                        <center><img src ="images\predic.jpg"  width="500" height="auto" ></center>
+                        <center><p style="text-align: center" > Figure 7 : Prédiction du modèle sur la figure 6 </p>
+                        </center> 
+                        
+                        <p p class = "lead" style="text-align: justify">Finalement, l'évaluation humaine est considérée comme la plus fiable, mais elle est également la plus coûteuse en termes
+                         de temps et de ressources.   </p>
+                                   
+                    
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perspectives section-->
+        <section id="perspective" class = "bg-light">
+            <div class="container px-4 bg-light">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>4. Perspectives</h2>
+                        <p class="lead">Il est possible d'améliorer ce modèle, et de l'évaluer avec d'autres métriques :</p>
+                        <ul class = "lead" style="text-align: justify">
+                            <li>Bien que nous ayons utilisé la métrique Bleue Score pour évaluer notre modèle,
+                                 il en existe d'autre la littérature , tel que METEOR ou encore Rouge</li>
+                                
+                            <li>Augmenter la taille de l'entrainement: nous nous sommes entrainées sur une base de données assez petite, il est possible d'expérimenter avec des 
+                                bases de données telles que MS COCO, Flickr30K voire Stock3M qui contient 3 millions d'images.
+                            </li>
+                            <li>Utiliser des architectures de réseaux de neurones plus avancées : des architectures plus avancées,
+                                 comme les réseaux de neurones à attention (Attention Based Model), peuvent aider le modèle à mieux comprendre les 
+                                relations entre les différents éléments de l'image et à les inclure dans la description générée.</li>
+                            <li>Faire une évaluation qualitative plus poussée, notamment avec les évaluations par sondage. Elles consistent à faire juger les descriptions générées par un modèle par 
+                                un groupe de personnes, généralement des utilisateurs cibles. Cette méthode est moins coûteuse que les 
+                                évaluations humaines, mais elle peut être moins fiable en raison de la subjectivité des répondants.</li>
+                        
+                            </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section-->
+        <section id="contact" >
+            <div class="container px-4 ">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Contact us</h2>
+                        <p class="lead fw-bolder">Signaté Aïssatou - Master 2 Vision et Machine Intelligente.</p>
+                        <p class="lead fw-bolder">Adresse mail : signate.pro@gmail.com</p>
+                        <p class="lead fw-bolder">LinkedIn : https://www.linkedin.com/in/a-signate-320278111/</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
