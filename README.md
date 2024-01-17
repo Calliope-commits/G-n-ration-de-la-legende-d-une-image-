@@ -50,8 +50,10 @@ Hyperparamètres :
 
 ## Evaluation : Bleu Score 
 ● Indicateur de performance
+
 ● Calcul la proportion de
-n-grammes (séquence de mot de longueur n) 
+n-grammes (séquence de mot de longueur n)
+
 ● Mesure la similitude entre une
 phrase générée par le modèle et la
 vérité terrain
