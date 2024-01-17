@@ -36,3 +36,29 @@ matrice de (1660 , 220)
 
 ![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/1fae94ee-474e-43bb-a572-245a2adb3901)
 
+## Présentation du modèle : entrainement 
+
+Hyperparamètres :
+-Optimizer : Adam 
+-Taille du batch : 3 
+-Dropout  : 0.5 
+-Nombre d'epoch : 7 
+-Learning rate : 0.001 
+-Momentum : 0.99 
+
+![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/e870c867-7eff-4e94-be78-b63631b379d3)
+
+## Evaluation : Bleu Score 
+● Indicateur de performance
+● Calcul la proportion de
+n-grammes (séquence de mot de longueur n) 
+● Mesure la similitude entre une
+phrase générée par le modèle et la
+vérité terrain
+
+
+**Beam Search (k=3) : 52.13%**
+**Greedy Search : 48.41**
+
+
+
