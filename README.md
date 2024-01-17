@@ -81,13 +81,12 @@ vérité terrain
 
 ## Illustration avec un exemple 
 
-![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/7775023a-4eb9-4502-ae03-93037b3ead3f)
+![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/51389b5b-9b06-46cc-be9a-c7282350cc25)
 
-Prédiction avec Greedy Search : "a man in a white shirt is
-standing in front of a man in a black shirt " ,**bleu score : 65%**
 
-Préciction avec Beam Search : “a group of people are sitting on
-a bench with a stick in his mouth” , **bleu score k=3 : 51%**
+Prédiction avec Greedy Search : "a black dog is jumping up to catch a frisbee"
+
+Préciction avec Beam Search : “a black dog and a black dog play with a redball in the grass" 
 
 
 
