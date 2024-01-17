@@ -21,4 +21,18 @@ downstream taks )
 
 ![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/46e443e6-e03c-4a36-9ecb-93eeb5fb6ad2)
 
+## Présentation du modèle : encodage du texte 
+-Glove intègre la co occurrence
+globale des mots pour obtenir
+des vecteurs de mots
+-Des relations sémantiques
+entre les mots sont dérivées
+-Avec un vocabulaire de 1660
+mot au final : on obtient une
+matrice de (1660 , 220)
+
+![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/02261af2-94fe-4155-9ff0-5f9fccefe7cb)
+
+
+
 
