@@ -25,8 +25,10 @@ downstream taks )
 -Glove intègre la co occurrence
 globale des mots pour obtenir
 des vecteurs de mots
+
 -Des relations sémantiques
 entre les mots sont dérivées
+
 -Avec un vocabulaire de 1660
 mot au final : on obtient une
 matrice de (1660 , 220)
