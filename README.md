@@ -51,9 +51,10 @@ Le concept sous-jacent qui distingue l'homme de la femme, c'est-à-dire le genre
 
 Pour rappel notre jeu de données est divisé en trois parties :
 
-Entrainement : 6000 images
-Validation : 1000 images
-Test : 1000 images
+-Entrainement : 6000 images 
+-Validation : 1000 images 
+-Test : 1000 images 
+
 Nous avons réalisé une série d'entrainement, tout en comparant les valeurs de perte des données d'entrainement et de validation, nous avons établis un modèle avec les hyperparamètres suivants
 
 Hyperparamètres :
