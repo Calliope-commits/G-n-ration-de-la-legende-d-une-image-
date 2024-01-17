@@ -31,8 +31,6 @@ entre les mots sont dérivées
 mot au final : on obtient une
 matrice de (1660 , 220)
 
-![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/02261af2-94fe-4155-9ff0-5f9fccefe7cb)
 
-
-
+![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/1fae94ee-474e-43bb-a572-245a2adb3901)
 
