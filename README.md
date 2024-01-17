@@ -24,6 +24,11 @@ downstream taks )
 ![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/46e443e6-e03c-4a36-9ecb-93eeb5fb6ad2)
 
 ## Présentation du modèle : encodage du texte 
+Dans le dataset Flickr8K, chaque image présente 5 légendes, qui constituent la vérité terrain, comme nous pouvons le voir sur la figure :
+
+![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/59e8148e-bec7-4c4b-ae56-6e5ed4e3a423)
+
+
 -Glove intègre la co occurrence
 globale des mots pour obtenir
 des vecteurs de mots
@@ -38,7 +43,18 @@ matrice de (1660 , 220)
 
 ![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/1fae94ee-474e-43bb-a572-245a2adb3901)
 
+Le concept sous-jacent qui distingue l'homme de la femme, c'est-à-dire le genre, peut être spécifié de manière équivalente par diverses autres paires de mots, comme roi et reine ou frère et sœur.
+
+
+
 ## Présentation du modèle : entrainement 
+
+Pour rappel notre jeu de données est divisé en trois parties :
+
+Entrainement : 6000 images
+Validation : 1000 images
+Test : 1000 images
+Nous avons réalisé une série d'entrainement, tout en comparant les valeurs de perte des données d'entrainement et de validation, nous avons établis un modèle avec les hyperparamètres suivants
 
 Hyperparamètres :
 -Optimizer : Adam 
