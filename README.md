@@ -2,6 +2,7 @@
 
 Modélisation de systèmes de vision : Génération de la légende d’une image
 Dataset : Flickr8k
+Dans ce repo vous trouverez un notebook , un état de l'art, ainsi qu'un site web qui présente en détail le projet.
 
 ## Contexte : 
 ● Génération de la légende d’une image, image captioning : tâche cible(
