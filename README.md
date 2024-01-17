@@ -6,14 +6,11 @@ Dans ce repo vous trouverez un notebook , un état de l'art, ainsi qu'un site we
 
 ## Contexte : 
 ● Génération de la légende d’une image, image captioning : tâche cible(
-downstream taks )
-
-● Traitement de données multimodales
-
+downstream taks )         
+● Traitement de données multimodales             
 ● Intéressant pour différents cas de figures :
  - améliorer l’expérience utilisateur
  - génération automatique de description visuelle
-
 
 ## Présentation du modèle : encodage de l'image 
 - Entraîné sur Image Net 
@@ -51,19 +48,19 @@ Le concept sous-jacent qui distingue l'homme de la femme, c'est-à-dire le genre
 
 Pour rappel notre jeu de données est divisé en trois parties :
 
--Entrainement : 6000 images 
--Validation : 1000 images 
--Test : 1000 images 
+-Entrainement : 6000 images     
+-Validation : 1000 images      
+-Test : 1000 images       
 
 Nous avons réalisé une série d'entrainement, tout en comparant les valeurs de perte des données d'entrainement et de validation, nous avons établis un modèle avec les hyperparamètres suivants
 
 Hyperparamètres :
--Optimizer : Adam 
--Taille du batch : 3 
--Dropout  : 0.5 
--Nombre d'epoch : 7 
--Learning rate : 0.001 
--Momentum : 0.99 
+-Optimizer : Adam       
+-Taille du batch : 3          
+-Dropout  : 0.5         
+-Nombre d'epoch : 7        
+-Learning rate : 0.001        
+-Momentum : 0.99     
 
 ![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/e870c867-7eff-4e94-be78-b63631b379d3)
 
