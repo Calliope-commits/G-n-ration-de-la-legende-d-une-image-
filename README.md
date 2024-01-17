@@ -60,7 +60,20 @@ vérité terrain
 
 
 **Beam Search (k=3) : 52.13%**
+
 **Greedy Search : 48.41**
+
+## Illustration avec un exemple 
+
+![image](https://github.com/Calliope-commits/Generation-de-la-legende-d-une-image-/assets/61286710/7775023a-4eb9-4502-ae03-93037b3ead3f)
+
+Prédiction avec Greedy Search : "a man in a white shirt is
+standing in front of a man in a black shirt " ,**bleu score : 65%**
+
+Préciction avec Beam Search : “a group of people are sitting on
+a bench with a stick in his mouth” , **bleu score k=3 : 51%**
+
+
 
 
 
