@@ -1,6 +1,7 @@
 # Generation-de-la-legende-d-une-image-
 
 Modélisation de systèmes de vision : Génération de la légende d’une image
+Dataset : Flickr8k
 
 ## Contexte : 
 ● Génération de la légende d’une image, image captioning : tâche cible(
